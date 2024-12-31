@@ -22,10 +22,10 @@ export const config = {
   //
   specs: [
     [
-      '../specs/navigation.feature.js',
-      '../specs/login.feature.js',
-      '../specs/create-board.feature.js',
-      '../specs/search-board.feature.js',
+      '../specs/navigation.spec.js',
+      '../specs/login.spec.js',
+      '../specs/create-board.spec.js',
+      '../specs/search-board.spec.js',
     ],
   ],
   // Patterns to exclude.
