@@ -20,14 +20,7 @@ export const config = {
   // The path of the spec files will be resolved relative from the directory of
   // of the config file unless it's absolute.
   //
-  specs: [
-    [
-      '../specs/navigation.spec.js',
-      '../specs/login.spec.js',
-      '../specs/create-board.spec.js',
-      '../specs/search-board.spec.js',
-    ],
-  ],
+  specs: [['../features/**/*.feature']],
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
@@ -126,7 +119,12 @@ export const config = {
   //
   // Make sure you have the wdio adapter package for the specific framework installed
   // before running any tests.
-  framework: 'mocha',
+  framework: 'cucumber',
+  cucumberOpts: {
+    retry: 1,
+    require: ['./tests/ui/steps/**/*.steps.js'],
+    ignoreUndefinedDefinitions: true,
+  },
   //
   // The number of times to retry the entire specfile when it fails as a whole
   // specFileRetries: 1,
@@ -158,11 +156,11 @@ export const config = {
   ],
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
-  mochaOpts: {
+  /*   mochaOpts: {
     ui: 'bdd',
     timeout: 60000,
     retries: 2,
-  },
+  }, */
   //
   // =====
   // Hooks
